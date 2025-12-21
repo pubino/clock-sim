@@ -1,6 +1,6 @@
 # Analog Clock
 
-An interactive Java application displaying a real-time analog clock with hour, minute, and second hands. Originally developed by Robert Vanderbei at Princeton University (1997).
+An interactive Java application displaying a real-time analog clock with hour, minute, and second hands by Professor Robert Vanderbei, Princeton University (1997).
 
 ## Overview
 
