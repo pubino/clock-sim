@@ -1,6 +1,6 @@
 # Analog Clock
 
-Part of [Prof. Robert Vanderbei's Java Applications](https://pubino.github.io/vanderbei-apps).
+Part of [Prof. Robert Vanderbei's Java Applications](https://pubino.github.io/vanderbei-apps#clock-sim).
 
 An interactive Java application displaying a real-time analog clock with hour, minute, and second hands by Professor Robert Vanderbei, Princeton University (1997).
 
