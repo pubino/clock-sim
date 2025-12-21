@@ -1,5 +1,7 @@
 # Analog Clock
 
+Part of [Vanderbei's Java Simulations](https://github.com/pubino/vanderbei-apps) collection.
+
 An interactive Java application displaying a real-time analog clock with hour, minute, and second hands by Professor Robert Vanderbei, Princeton University (1997).
 
 ## Overview
