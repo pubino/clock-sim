@@ -1,16 +1,14 @@
 package clock;
 
 import java.awt.*;
-import java.applet.*;
 import java.awt.image.*;
 import java.util.*;
 import java.io.*;
-import java.net.*;
 import java.text.*;
 
 import myutil.*;
 
-public class Clock extends Applet
+public class Clock extends Panel implements SimApp
 {
 	ClockCanvas cv;
 

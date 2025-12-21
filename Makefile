@@ -38,6 +38,7 @@ MAIN_CLASS := clock.Clock
 SOURCES := \
 	clock/Clock.java \
 	myutil/AppletFrame.java \
+	myutil/SimApp.java \
 	myutil/GL.java
 
 # App bundle settings
