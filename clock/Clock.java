@@ -20,29 +20,34 @@ public class Clock extends Applet
 
 	public void init()
 	{
-	    int sec=0, min=0, hour=0;
-	    String str="";
-
 	    setLayout(new FlowLayout(FlowLayout.LEFT));
 	    setBackground(Color.white);
 	    cv = new ClockCanvas();
 	    add(cv);
 	    cv.setSize(300,300);
 	    validate();
-	    GL.ginit(cv.getGraphics(), cv.getSize().width, cv.getSize().height, cv);
-	    show();
-	    while (true) {
-		try {
+	}
+
+	public void start()
+	{
+	    Thread clockThread = new Thread(() -> {
+		while (true) {
+		    try {
 			Thread.sleep(1000);
-		} catch(InterruptedException ie){};
+		    } catch(InterruptedException ie){
+			break;
+		    }
 
-	        Date now = new Date();
-	        hour = now.getHours();
-	        min  = now.getMinutes();
-	        sec  = now.getSeconds();
+		    Date now = new Date();
+		    int hour = now.getHours();
+		    int min  = now.getMinutes();
+		    int sec  = now.getSeconds();
 
-		cv.setClock(hour, min, sec);
-	    }
+		    cv.setClock(hour, min, sec);
+		}
+	    });
+	    clockThread.setDaemon(true);
+	    clockThread.start();
 	}
 }
 
@@ -68,6 +73,7 @@ class ClockCanvas extends Canvas
 		int j;
 		double r, theta, dhour, dmin, dsec;
 
+		GL.ginit(g, getSize().width, getSize().height, this);
 		GL.ortho2(-1.2,1.2,-1.2,1.2);
 		GL.color(Color.red);
 		GL.circf(0,0,1);
