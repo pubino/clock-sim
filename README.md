@@ -71,8 +71,3 @@ The clock uses trigonometry to position the hands:
 - The hour hand moves 30° per hour plus smooth interpolation for minutes
 - The minute hand moves 6° per minute plus smooth interpolation for seconds
 - The second hand moves 6° per second
-
-## License
-
-Copyright 1997, Princeton University.
-Based on original work by Robert Vanderbei.
