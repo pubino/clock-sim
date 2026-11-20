@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Analog Clock</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow"><a href="https://pubino.github.io/vanderbei-apps/#clock-sim">Vanderbei’s applications</a> · Princeton University</p>
+      <h1>Analog Clock</h1>
+    </header>
+    <section class="panel" aria-label="Local time">
+      <canvas id="clock" width="540" height="540" role="img" aria-label="Analog clock with a yellow hour hand, green minute hand, and black second hand"></canvas>
+      <div class="readout" hidden id="readout">
+        <time id="time" aria-label="Local time"></time>
+        <p id="zone" class="hint"></p>
+      </div>
+      <p id="status" class="hint" role="status">Loading the clock…</p>
+      <p id="error" role="alert" hidden></p>
+      <button id="retry" class="secondary" type="button" hidden>Reload</button>
+    </section>
+    <footer>
+      <p>Based on Robert Vanderbei’s original Java application. Python runs in your browser via
+        <a href="https://pyodide.org/">Pyodide</a>. <a href="https://github.com/pubino/clock-sim">Source on GitHub</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>

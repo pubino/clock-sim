@@ -1,5 +1,34 @@
 # Analog Clock
 
+[Run in your browser](https://pubino.github.io/clock-sim/).
+
+The page uses the browser’s local time. Python computes the original
+ClockCanvas dial and hand geometry, including the interpolated hour and
+minute hands. The display updates once per second and shows the local zone.
+
+The test suite compares the Python model with the original Java app and
+exercises the browser controls.
+
+### Browser development
+
+```sh
+docker-compose up --build preview
+# Open http://localhost:8000
+docker-compose run --build --rm js-check
+docker-compose run --build --rm test
+```
+
+For a local test with JDK 25, uv and Node installed:
+
+```sh
+uv sync --locked --python 3.13.12
+uv run python scripts/build_site.py
+uv run playwright install --only-shell chromium
+uv run python -m unittest discover -s tests -v
+npm ci
+npm run check
+```
+
 Part of [Prof. Robert Vanderbei's Java Applications](https://pubino.github.io/vanderbei-apps#clock-sim).
 
 An interactive Java application displaying a real-time analog clock with hour, minute, and second hands by Professor Robert Vanderbei, Princeton University (1997).
@@ -59,7 +88,7 @@ clock-sim/
 
 - **Red ring**: Outer clock border
 - **White face**: Clock background
-- **Red tick marks**: Hour positions (12 marks)
+- **White tick marks**: Hour positions (12 marks)
 - **Black tick marks**: Minute positions (60 marks)
 - **Yellow hand**: Hour hand (triangular)
 - **Green hand**: Minute hand (triangular)
